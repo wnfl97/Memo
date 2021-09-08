@@ -32,6 +32,7 @@ body {
 .items {
   height: 31.25rem;
   padding: 0;
+  overflow-y: auto;
 }
 
 .item {
