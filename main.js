@@ -1,8 +1,16 @@
 'use strict';
 
 const items = document.querySelector('.items');
+const form = document.querySelector('.new-form');
 const input= document. querySelector('.footer__text');
 const addBtn = document.querySelector('.footer__btn');
+
+
+form.addEventListener('submit', event=>{
+    event.preventDefault();
+    onAdd();
+    
+});
 
 function onAdd(){
     const text = input.value;
@@ -31,6 +39,9 @@ function createItem(text){
         <div class="divider"></div>
     `;
     id++;
+    
+    return itemRow;
+}
 
     // const item = document.createElement('div');
     // item.setAttribute('class','item');
@@ -56,18 +67,17 @@ function createItem(text){
     // itemRow.appendChild(item);
     // itemRow.appendChild(divider);
 
-    return itemRow;
-}
 
-addBtn.addEventListener('click', ()=>{
-    onAdd();
-});
 
-input.addEventListener('keypress', event=>{
-    if(event.keyCode === 13){
-        return onAdd();
-    }
-});
+// addBtn.addEventListener('click', ()=>{
+//     onAdd();
+// });
+
+// input.addEventListener('keypress', event=>{
+//     if(event.keyCode === 13){
+//         return onAdd();
+//     }
+// });
 
 items.addEventListener('click', event=>{
     const id = event.target.dataset.id;
